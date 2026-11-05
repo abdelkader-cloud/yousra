@@ -1,0 +1,341 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #fffafb;
+    color: #612c43;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+body:not(.site-unlocked) > :not(.access-gate) {
+    display: none;
+}
+
+body.site-unlocked > .access-gate {
+    display: none;
+}
+
+.access-gate {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fff1f5, #fce1eb);
+}
+
+.access-form {
+    display: grid;
+    width: min(100%, 380px);
+    gap: 1rem;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    border: 1px solid #f4cfdb;
+    border-radius: 20px;
+    background: #fffafb;
+    box-shadow: 0 12px 35px rgb(129 61 91 / 12%);
+    text-align: center;
+}
+
+.access-title {
+    margin: 0;
+    color: #813d5b;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.access-description {
+    margin: 0;
+    color: #795b68;
+    line-height: 1.7;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.pin-input {
+    width: 100%;
+    min-height: 52px;
+    border: 1px solid #dca9bb;
+    border-radius: 10px;
+    background: #fff;
+    color: #612c43;
+    font: inherit;
+    font-size: 1.5rem;
+    letter-spacing: 0.4em;
+    text-align: center;
+}
+
+.pin-input:focus-visible,
+.access-button:focus-visible {
+    outline: 2px solid #c0527d;
+    outline-offset: 3px;
+}
+
+.access-button {
+    min-height: 48px;
+    border: 0;
+    border-radius: 10px;
+    background: #a33f67;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.access-button:hover {
+    background: #813d5b;
+}
+
+.access-error {
+    min-height: 1.5em;
+    margin: 0;
+    color: #a32048;
+    font-size: 0.95rem;
+}
+
+.site-header {
+    display: grid;
+    min-height: clamp(180px, 30vh, 280px);
+    place-items: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #fff1f5, #fce1eb);
+    border-bottom: 1px solid #f4cfdb;
+    text-align: center;
+}
+
+.site-title {
+    margin: 0;
+    color: #813d5b;
+    font-size: clamp(1.7rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.4;
+    text-wrap: balance;
+    transition: color 220ms ease, transform 220ms ease, text-shadow 220ms ease;
+}
+
+.site-title:hover,
+.site-title:focus-visible {
+    color: #c0527d;
+    transform: translateY(-4px) scale(1.03);
+    text-shadow: 0 8px 24px rgb(192 82 125 / 20%);
+}
+
+.site-title:focus-visible {
+    outline: 2px solid #c0527d;
+    outline-offset: 8px;
+    border-radius: 4px;
+}
+
+.workshops {
+    width: min(100% - 2rem, 1100px);
+    margin: 0 auto;
+    padding: clamp(2.5rem, 7vw, 5rem) 0;
+    text-align: center;
+}
+
+.section-title {
+    margin: 0 0 2rem;
+    color: #813d5b;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    line-height: 1.4;
+}
+
+.workshop-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.workshop-card {
+    display: grid;
+    min-height: 112px;
+    place-items: center;
+    padding: 1.25rem;
+    border: 1px solid #f4cfdb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgb(129 61 91 / 6%);
+    color: #612c43;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.7;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-4px);
+    border-color: #e7a9bf;
+    box-shadow: 0 12px 26px rgb(129 61 91 / 12%);
+}
+
+.workshop-link {
+    height: 100%;
+    text-decoration: none;
+}
+
+.workshop-link:focus-visible {
+    outline: 2px solid #c0527d;
+    outline-offset: 4px;
+}
+
+.workshop-page {
+    width: min(100% - 2rem, 900px);
+    margin: 0 auto;
+    padding: clamp(2.5rem, 7vw, 5rem) 0;
+}
+
+.workshop-page .section-title {
+    text-align: center;
+}
+
+.media-section {
+    margin-top: 2rem;
+    padding: clamp(1rem, 4vw, 2rem);
+    border: 1px solid #f4cfdb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgb(129 61 91 / 6%);
+}
+
+.media-title {
+    margin: 0 0 1rem;
+    color: #813d5b;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+.video-player {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    background: #2e2027;
+}
+
+.audio-player {
+    display: block;
+    width: 100%;
+}
+
+.media-note {
+    margin: 0.75rem 0 0;
+    color: #795b68;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #a33f67;
+    font-weight: 700;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.back-link:focus-visible {
+    outline: 2px solid #c0527d;
+    outline-offset: 4px;
+}
+
+.site-footer {
+    padding: clamp(2rem, 5vw, 3.5rem) max(1rem, calc((100% - 1100px) / 2)) 1rem;
+    background: #612c43;
+    color: #fff7fa;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 2rem;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-logo {
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 0.75rem;
+    border: 1px solid rgb(255 255 255 / 55%);
+    border-radius: 50%;
+    background: #fce1eb;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.footer-team-name,
+.footer-heading {
+    margin: 0 0 0.75rem;
+    color: #fff;
+    font-size: 1.15rem;
+}
+
+.footer-motto {
+    margin: 0;
+    color: #f8dce7;
+    line-height: 1.8;
+}
+
+.footer-links,
+.social-links {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.site-footer a {
+    color: #f8dce7;
+    line-height: 1.6;
+    text-decoration: none;
+    text-underline-offset: 4px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.copyright {
+    margin: 2rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(255 255 255 / 22%);
+    color: #f8dce7;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
